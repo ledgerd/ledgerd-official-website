@@ -1,0 +1,448 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+
+<!-- page-intro start-->
+<!-- ================ -->
+<div class="page-intro">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ol class="breadcrumb">
+					<li><i class="fa fa-home pr-10"></i><a href="index.html">Home</a></li>
+					<li class="active">Forms</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- page-intro end -->
+
+<!-- section start -->
+<div class="section gray-bg">
+	<div class="container">
+		<h2>Form elements (Gray Background)</h2>
+		<form role="form">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group has-success has-feedback">
+						<label class="control-label" for="inputSuccess3">Input with success</label>
+						<input type="text" class="form-control" id="inputSuccess3">
+						<i class="fa fa-check form-control-feedback"></i>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group has-warning has-feedback">
+						<label class="control-label" for="inputWarning3">Input with warning</label>
+						<input type="text" class="form-control" id="inputWarning3">
+						<i class="fa fa-warning form-control-feedback"></i>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group has-error has-feedback">
+						<label class="control-label" for="inputError3">Input with error</label>
+						<input type="text" class="form-control" id="inputError3">
+						<i class="fa fa-times form-control-feedback"></i>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group has-feedback">
+						<label class="control-label">Username</label>
+						<input type="text" class="form-control">
+						<i class="fa fa-user form-control-feedback"></i>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group has-feedback">
+						<label class="control-label">Password</label>
+						<input type="password" class="form-control">
+						<i class="fa fa-lock form-control-feedback"></i>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group has-feedback">
+						<label class="control-label">Email</label>
+						<input type="email" class="form-control">
+						<i class="fa fa-envelope-o form-control-feedback"></i>
+					</div>
+				</div>
+			</div>
+		</form>
+		<form role="form">
+			<div class="form-group">
+				<label for="disabledTextInput2">Disabled input</label>
+				<input type="text" id="disabledTextInput2" class="form-control" placeholder="Disabled input" disabled="">
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="">
+					Option one is this and that—be sure to include why it's great
+				</label>
+			</div>
+			<div class="checkbox disabled">
+				<label>
+					<input type="checkbox" value="" disabled="">
+					Option two is disabled
+				</label>
+			</div>
+			<br>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios4" value="option1" checked="">
+					Option one is this and that—be sure to include why it's great
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios5" value="option2">
+					Option two can be something else and selecting it will deselect option one
+				</label>
+			</div>
+			<div class="radio disabled">
+				<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios6" value="option3" disabled="">
+					Option three is disabled
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</div>
+<!-- section end -->
+<div class="space"></div>
+<!-- section start -->
+<div class="section dark-bg text-muted">
+	<div class="container">
+		<h2>Form elements (Dark Background)</h2>
+		<form role="form">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group has-success has-feedback">
+						<label class="control-label" for="inputSuccess4">Input with success</label>
+						<input type="text" class="form-control" id="inputSuccess4">
+						<i class="fa fa-check form-control-feedback"></i>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group has-warning has-feedback">
+						<label class="control-label" for="inputWarning4">Input with warning</label>
+						<input type="text" class="form-control" id="inputWarning4">
+						<i class="fa fa-warning form-control-feedback"></i>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group has-error has-feedback">
+						<label class="control-label" for="inputError4">Input with error</label>
+						<input type="text" class="form-control" id="inputError4">
+						<i class="fa fa-times form-control-feedback"></i>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group has-feedback">
+						<label class="control-label">Username</label>
+						<input type="text" class="form-control">
+						<i class="fa fa-user form-control-feedback"></i>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group has-feedback">
+						<label class="control-label">Password</label>
+						<input type="password" class="form-control">
+						<i class="fa fa-lock form-control-feedback"></i>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group has-feedback">
+						<label class="control-label">Email</label>
+						<input type="email" class="form-control">
+						<i class="fa fa-envelope-o form-control-feedback"></i>
+					</div>
+				</div>
+			</div>
+		</form>
+		<form role="form">
+			<div class="form-group">
+				<label for="disabledTextInput3">Disabled input</label>
+				<input type="text" id="disabledTextInput3" class="form-control" placeholder="Disabled input" disabled="">
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="">
+					Option one is this and that—be sure to include why it's great
+				</label>
+			</div>
+			<div class="checkbox disabled">
+				<label>
+					<input type="checkbox" value="" disabled="">
+					Option two is disabled
+				</label>
+			</div>
+			<br>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios7" value="option1" checked="">
+					Option one is this and that—be sure to include why it's great
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios8" value="option2">
+					Option two can be something else and selecting it will deselect option one
+				</label>
+			</div>
+			<div class="radio disabled">
+				<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios9" value="option3" disabled="">
+					Option three is disabled
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</div>
+<!-- section end -->
+<div class="container">
+	<div class="alert alert-info alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		The <strong>Default Background</strong> is defined by the current color scheme.
+	</div>
+</div>
+<!-- section start -->
+<div class="section default-bg text-muted">
+	<div class="container">
+		<h2>Form elements (Default Background)</h2>
+		<form role="form">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group has-success has-feedback">
+						<label class="control-label" for="inputSuccess5">Input with success</label>
+						<input type="text" class="form-control" id="inputSuccess5">
+						<i class="fa fa-check form-control-feedback"></i>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group has-warning has-feedback">
+						<label class="control-label" for="inputWarning5">Input with warning</label>
+						<input type="text" class="form-control" id="inputWarning5">
+						<i class="fa fa-warning form-control-feedback"></i>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group has-error has-feedback">
+						<label class="control-label" for="inputError5">Input with error</label>
+						<input type="text" class="form-control" id="inputError5">
+						<i class="fa fa-times form-control-feedback"></i>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group has-feedback">
+						<label class="control-label">Username</label>
+						<input type="text" class="form-control">
+						<i class="fa fa-user form-control-feedback"></i>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group has-feedback">
+						<label class="control-label">Password</label>
+						<input type="password" class="form-control">
+						<i class="fa fa-lock form-control-feedback"></i>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group has-feedback">
+						<label class="control-label">Email</label>
+						<input type="email" class="form-control">
+						<i class="fa fa-envelope-o form-control-feedback"></i>
+					</div>
+				</div>
+			</div>
+		</form>
+		<form role="form">
+			<div class="form-group">
+				<label for="disabledTextInput4">Disabled input</label>
+				<input type="text" id="disabledTextInput4" class="form-control" placeholder="Disabled input" disabled="">
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="">
+					Option one is this and that—be sure to include why it's great
+				</label>
+			</div>
+			<div class="checkbox disabled">
+				<label>
+					<input type="checkbox" value="" disabled="">
+					Option two is disabled
+				</label>
+			</div>
+			<br>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios10" value="option1" checked="">
+					Option one is this and that—be sure to include why it's great
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios11" value="option2">
+					Option two can be something else and selecting it will deselect option one
+				</label>
+			</div>
+			<div class="radio disabled">
+				<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios12" value="option3" disabled="">
+					Option three is disabled
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</div>
+<!-- section end -->
+<div class="space"></div>
+<!-- section start -->
+<footer class="section footer">
+	<div class="container">
+		<div class="footer-content">
+			<h2>Form elements (Footer)</h2>
+			<form role="form">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group has-success has-feedback">
+							<label class="control-label" for="inputSuccess6">Input with success</label>
+							<input type="text" class="form-control" id="inputSuccess6">
+							<i class="fa fa-check form-control-feedback"></i>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group has-warning has-feedback">
+							<label class="control-label" for="inputWarning6">Input with warning</label>
+							<input type="text" class="form-control" id="inputWarning6">
+							<i class="fa fa-warning form-control-feedback"></i>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group has-error has-feedback">
+							<label class="control-label" for="inputError6">Input with error</label>
+							<input type="text" class="form-control" id="inputError6">
+							<i class="fa fa-times form-control-feedback"></i>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group has-feedback">
+							<label class="control-label">Username</label>
+							<input type="text" class="form-control">
+							<i class="fa fa-user form-control-feedback"></i>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group has-feedback">
+							<label class="control-label">Password</label>
+							<input type="password" class="form-control">
+							<i class="fa fa-lock form-control-feedback"></i>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group has-feedback">
+							<label class="control-label">Email</label>
+							<input type="email" class="form-control">
+							<i class="fa fa-envelope-o form-control-feedback"></i>
+						</div>
+					</div>
+				</div>
+			</form>
+			<form role="form">
+				<div class="form-group">
+					<label for="disabledTextInput5">Disabled input</label>
+					<input type="text" id="disabledTextInput5" class="form-control" placeholder="Disabled input" disabled="">
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" value="">
+						Option one is this and that—be sure to include why it's great
+					</label>
+				</div>
+				<div class="checkbox disabled">
+					<label>
+						<input type="checkbox" value="" disabled="">
+						Option two is disabled
+					</label>
+				</div>
+				<br>
+				<div class="radio">
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios13" value="option1" checked="">
+						Option one is this and that—be sure to include why it's great
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios14" value="option2">
+						Option two can be something else and selecting it will deselect option one
+					</label>
+				</div>
+				<div class="radio disabled">
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios15" value="option3" disabled="">
+						Option three is disabled
+					</label>
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	</div>
+</footer>
+<!-- section end -->
+<div class="space"></div>
+<!-- section start -->
+<!-- ================ -->
+<div class="section gray-bg text-muted footer-top clearfix">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="owl-carousel clients">
+					<div class="client">
+						<a href="#"><img src="images/client-1.png" alt=""></a>
+					</div>
+					<div class="client">
+						<a href="#"><img src="images/client-2.png" alt=""></a>
+					</div>
+					<div class="client">
+						<a href="#"><img src="images/client-3.png" alt=""></a>
+					</div>
+					<div class="client">
+						<a href="#"><img src="images/client-4.png" alt=""></a>
+					</div>
+					<div class="client">
+						<a href="#"><img src="images/client-5.png" alt=""></a>
+					</div>
+					<div class="client">
+						<a href="#"><img src="images/client-6.png" alt=""></a>
+					</div>
+					<div class="client">
+						<a href="#"><img src="images/client-7.png" alt=""></a>
+					</div>
+					<div class="client">
+						<a href="#"><img src="images/client-8.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<blockquote class="inline">
+					<p class="margin-clear">Design is not just what it looks like and feels like. Design is how it works.</p>
+					<footer><cite title="Source Title">Steve Jobs </cite></footer>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- section end -->
+
+{% endblock %}
