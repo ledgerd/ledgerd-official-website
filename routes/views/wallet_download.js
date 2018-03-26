@@ -12,11 +12,11 @@ exports = module.exports = function (req, res) {
 	var user_agent = req.header('user-agent').toLowerCase();
 	console.log(user_agent);
 	var agent = {
-		// linux: {
-		// 	link: 'http://dl.ledgerd.org/ledgerd-wallet-linux64-0.4.1.zip',
-		// 	icon: 'fa fa-linux',
-		// 	text: 'Linux',
-		// },
+		linux: {
+			link: 'http://dl.ledgerd.org/ledgerd-wallet-linux64-0.4.1.zip',
+			icon: 'fa fa-linux',
+			text: 'Linux',
+		},
 		osx: {
 			link: 'http://dl.ledgerd.org/ledgerd-wallet-osx64-0.4.1.zip',
 			icon: 'fa fa-apple',
