@@ -12,11 +12,11 @@ exports = module.exports = function (req, res) {
 	var user_agent = req.header('user-agent').toLowerCase();
 	console.log(user_agent);
 	var agent = {
-		linux: {
-			link: 'http://dl.ledgerd.org/ledgerd-wallet-linux64-0.4.1.zip',
-			icon: 'fa fa-linux',
-			text: 'Linux',
-		},
+		// linux: {
+		// 	link: 'http://dl.ledgerd.org/ledgerd-wallet-linux64-0.4.1.zip',
+		// 	icon: 'fa fa-linux',
+		// 	text: 'Linux',
+		// },
 		osx: {
 			link: 'http://dl.ledgerd.org/ledgerd-wallet-osx64-0.4.1.zip',
 			icon: 'fa fa-apple',
@@ -35,18 +35,18 @@ exports = module.exports = function (req, res) {
 		iphone: {
 			link: 'http://dl.ledgerd.org/Ledgerd.ipa',
 			icon: 'fa fa-apple',
-			text: 'iOS',
+			text: 'iPhone',
 		},
 	};
-	if (user_agent.indexOf('linux')) {
+	if (user_agent.indexOf('linux') !== -1) {
 		locals.agent = agent.linux;
-	} else if (user_agent.indexOf('osx')) {
+	} else if (user_agent.indexOf('osx') !== -1) {
 		locals.agent = agent.osx;
-	} else if (user_agent.indexOf('windows')) {
+	} else if (user_agent.indexOf('windows') !== -1) {
 		locals.agent = agent.windows;
-	} else if (user_agent.indexOf('android')) {
+	} else if (user_agent.indexOf('android') !== -1) {
 		locals.agent = agent.android;
-	} else if (user_agent.indexOf('iphone')) {
+	} else if (user_agent.indexOf('iphone') !== -1) {
 		locals.agent = agent.iphone;
 	} else {
 		locals.agent = {
