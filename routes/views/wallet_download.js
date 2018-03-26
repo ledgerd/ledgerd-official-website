@@ -10,7 +10,7 @@ exports = module.exports = function (req, res) {
 	locals.section = 'wallet';
 	locals.data = {};
 	var user_agent = req.header('user-agent').toLowerCase();
-	console.log(req.header('user-agent'));
+	console.log(user_agent);
 	var agent = {
 		linux: {
 			link: 'http://dl.ledgerd.org/ledgerd-wallet-linux64-0.4.1.zip',
@@ -32,7 +32,7 @@ exports = module.exports = function (req, res) {
 			icon: 'fa fa-android',
 			text: 'Android',
 		},
-		ios: {
+		iphone: {
 			link: 'http://dl.ledgerd.org/Ledgerd.ipa',
 			icon: 'fa fa-apple',
 			text: 'iOS',
@@ -46,8 +46,8 @@ exports = module.exports = function (req, res) {
 		locals.agent = agent.windows;
 	} else if (user_agent.indexOf('android')) {
 		locals.agent = agent.android;
-	} else if (user_agent.indexOf('ios')) {
-		locals.agent = agent.ios;
+	} else if (user_agent.indexOf('iphone')) {
+		locals.agent = agent.iphone;
 	} else {
 		locals.agent = {
 			link: '#wallet-more',
