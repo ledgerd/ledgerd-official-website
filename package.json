@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "keystone": "4.0.0-beta.5",
-    "lodash": "^4.13.1",
+    "async": "2.1.4",
     "consolidate": "0.14.5",
-    "nunjucks": "3.0.0", 
-    "dotenv": "4.0.0", 
-    "keystone-email": "1.0.5", 
-    "async": "2.1.4"
+    "dotenv": "4.0.0",
+    "keystone": "4.0.0-beta.5",
+    "keystone-email": "1.0.5",
+    "ledgerd-lib": "^0.19.2",
+    "lodash": "^4.13.1",
+    "nunjucks": "3.0.0"
   },
   "devDependencies": {
     "eslint": "3.15.0",

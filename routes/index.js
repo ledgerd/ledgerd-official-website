@@ -57,7 +57,7 @@ exports = module.exports = function (app) {
 	app.all('/contact', routes.views.contact);
 	app.get('/member', routes.views.member);
 	app.get('/download-wallet', routes.views.wallet_download);
-	app.get('/get-lgd', routes.views.get_lgd);
+	app.post('/get-lgd', routes.views.get_lgd);
 	app.get('/validator', routes.views.validator);
 	app.get('/market-maker', routes.views.market_maker);
 	app.get('/gateway', routes.views.gateway);
