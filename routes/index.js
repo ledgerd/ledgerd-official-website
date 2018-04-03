@@ -73,6 +73,7 @@ exports = module.exports = function (app) {
 	app.get('/policy', routes.views.policy);
 	app.get('/terms', routes.views.terms);
 	app.get('/election', routes.views.election);
+	app.get('/roadmap', routes.views.roadmap);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
