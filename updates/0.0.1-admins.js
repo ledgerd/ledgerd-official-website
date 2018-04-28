@@ -11,6 +11,9 @@ exports.create = {
 	Member: [
 		{ 'name.first': 'Admin', 'name.last': 'User', 'email': 'user@keystonejs.com', 'password': 'admin', 'isAdmin': true },
 	],
+	Params: [
+		{ 'key': 'lgd_price', 'value': '0.002' },
+	],
 };
 
 /*

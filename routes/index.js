@@ -74,6 +74,12 @@ exports = module.exports = function (app) {
 	app.get('/terms', routes.views.terms);
 	app.get('/election', routes.views.election);
 	app.get('/roadmap', routes.views.roadmap);
+	app.get('/exchange', routes.views.exchange);
+	app.get('/lgd-price', function (req, res) {
+		keystone.list('Params').model.find().where('key', 'lgd_price').exec(function (err, items) {
+			res.send(items[0]);
+		});
+	});
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

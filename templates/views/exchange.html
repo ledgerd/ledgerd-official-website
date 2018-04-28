@@ -1,0 +1,118 @@
+{% extends "layouts/default.html" %}
+
+{% block css %}
+<style>
+	.img-circle {
+		width: 48px;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- main-container start -->
+<!-- ================ -->
+<section class="main-container">
+
+	<div class="container">
+		<div class="row">
+
+			<!-- main start -->
+			<!-- ================ -->
+			<div class="main col-md-12">
+
+				<!-- page-title start -->
+				<!-- ================ -->
+				<h1 class="page-title">在线兑换LGD</h1>
+				<div class="separator-2"></div>
+				<p class="lead">通过BTC、ETH、LTC、XRP在线兑换LGD。</p>
+				<div class="alert alert-info" role="alert">LGD价格：$0.002，兑换比例以美元为基础随市场浮动。</div>
+				<input type="hidden" id="lgdPrice" value="0.002" />
+				<!-- page-title end -->
+
+				<form role="form" id="formGetLGD" method="post" novalidate="novalidate" action="/get-lgd">
+					<div class="form-group">
+						<label for="inputAddress">要获得LGD币的地址</label>
+						<input type="text" class="form-control" id="inputAddress" name="address" onblur="getAddress(event)" onchange="getAddress(event)"
+							   placeholder="L开头的LGD地址" required="required" minlength="34" maxlength="34">
+						<div id="inputAddress-remote"></div>
+					</div>
+				</form>
+				<table id="coinTable" class="table table-hover">
+					<tr>
+						<th>币种</th>
+						<th>价格</th>
+						<th data-toggle="tooltip" data-placement="top" title="单个币兑换LGD数量">可兑换数量 <i class="fa fa-question-circle"></i> </th>
+						<th data-toggle="tooltip" data-placement="top" title="将币转入下列地址，将按当前价获得LGD币">转入地址 <i class="fa fa-question-circle"></i></th>
+						<th>兑换记录</th>
+					</tr>
+					<tr>
+						<td><img src="/images/bitcoin.png" class="img-circle">比特币</td>
+						<td id="btcPrice"></td>
+						<td id="btcEx"></td>
+						<td>1LjWSgZt5mF4s98WvCbC1JeANDdJSuxrFi</td>
+						<td>2笔</td>
+					</tr>
+					<tr>
+						<td><img src="/images/ethereum.png" class="img-circle">以太坊</td>
+						<td id="ethPrice"></td>
+						<td id="ethEx"></td>
+						<td>0xfFFb640bC9159684Cb14F2a02276d1b5A278803b</td>
+						<td>2笔</td></tr>
+					<tr>
+						<td><img src="/images/litecoin.png" class="img-circle">莱特币</td>
+						<td id="ltcPrice"></td>
+						<td id="ltcEx"></td>
+						<td>LeabZjBfZNVAWKKhgx4v2uwWRZwBhJYmAR</td>
+						<td>3笔</td>
+					</tr>
+					<tr>
+						<td><img src="/images/ripple.png" class="img-circle">瑞波币</td>
+						<td id="xrpPrice"></td>
+						<td id="xrpEx"></td>
+						<td>rhpKCGNh2euH7Cr1Bv1ewW4F8QSKvYPAeJ</td>
+						<td>5笔</td>
+					</tr>
+				</table>
+				<p><small>以上价格和数量仅共参考，以实际兑换时价格为准。</small></p>
+			</div>
+			<!-- main end -->
+
+		</div>
+	</div>
+</section>
+<!-- main-container end -->
+{% endblock %}
+
+{% block js %}
+<script>
+	$(document).ready(function () {
+		$.get('https://api.coinmarketcap.com/v1/ticker/?limit=10').success(function (data) {
+			console.log(data)
+			var lgdPrice = parseFloat($('#lgdPrice').val())
+			var btcPrice = parseFloat(_.findWhere(data,{id:'bitcoin'}).price_usd);
+			var ltcPrice = parseFloat(_.findWhere(data,{id:'litecoin'}).price_usd);
+			var ethPrice = parseFloat(_.findWhere(data,{id:'ethereum'}).price_usd);
+			var xrpPrice = parseFloat(_.findWhere(data,{id:'ripple'}).price_usd);
+			$('#btcPrice').text('$'+btcPrice);
+			$('#ltcPrice').text('$'+ltcPrice);
+			$('#ethPrice').text('$'+ethPrice);
+			$('#xrpPrice').text('$'+xrpPrice);
+			$('#btcEx').text(Math.round(btcPrice / lgdPrice))
+			$('#ltcEx').text(Math.round(ltcPrice / lgdPrice))
+			$('#ethEx').text(Math.round(ethPrice / lgdPrice))
+			$('#xrpEx').text(Math.round(xrpPrice / lgdPrice))
+		})
+	});
+	function getAddress(event) {
+		$('#inputAddress-remote').text('此地址将额外赠送20%LGD。')
+		$.get('/exchange/coin_address',{lgd_address:event.target.value}).success(function (res) {
+			if(res.err){
+				$('#inputAddress-remote').text(res.message);
+			}else{
+				$('#coinTable').append('<tr><td><img src="{0}" class="img-circle"/> {1}</td></tr>')
+			}
+		})
+		console.log(event);
+	}
+</script>
+{% endblock %}
